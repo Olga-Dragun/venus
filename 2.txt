@@ -1,0 +1,45 @@
+SELECT track,
+     CASE
+        WHEN finished = true THEN 2
+        WHEN cancelled = true THEN -1
+        WHEN "inDelivery" = true THEN 1
+    ELSE 0
+    END AS status
+FROM "Orders"
+
+
+
+scooter_rent=# SELECT track,
+scooter_rent-#      CASE
+scooter_rent-#         WHEN finished = true THEN 2
+scooter_rent-#         WHEN cancelled = true THEN -1
+scooter_rent-#         WHEN "inDelivery" = true THEN 1
+scooter_rent-#     ELSE 0
+scooter_rent-#     END AS status
+scooter_rent-# FROM "Orders"
+scooter_rent-# ;
+ track  | status
+--------+--------
+ 459629 |      0
+ 506843 |      0
+ 498965 |      0
+ 274213 |      0
+ 785628 |      0
+ 135446 |      0
+ 642423 |      0
+ 718965 |      0
+ 317048 |      1
+ 317048 |      1
+ 329640 |      1
+ 329640 |      1
+ 933936 |      1
+ 933936 |      1
+ 228307 |      1
+ 228307 |      1
+ 753988 |      1
+ 753988 |      1
+ 851745 |      1
+ 851745 |      1
+ 908422 |     -1
+(21 rows)
+

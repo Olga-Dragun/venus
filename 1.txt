@@ -1,0 +1,21 @@
+SELECT c.login,
+  	COUNT(o."inDelivery") AS number_of_orders_in_delivery
+FROM "Couriers" AS c
+JOIN "Orders" AS o ON c.id=o."courierId"
+WHERE o."inDelivery" = TRUE
+GROUP BY c.login;
+
+
+
+scooter_rent=# SELECT c.login,
+scooter_rent-#    COUNT(o."inDelivery") AS number_of_orders_in_delivery
+scooter_rent-# FROM "Couriers" AS c
+scooter_rent-# JOIN "Orders" AS o ON c.id=o."courierId"
+scooter_rent-# WHERE o."inDelivery" = TRUE
+scooter_rent-# GROUP BY c.login;
+ login  | number_of_orders_in_delivery
+--------+------------------------------
+ alex   |                            4
+ filipp |                            4
+ oleg   |                            2
+ polina |                            2
